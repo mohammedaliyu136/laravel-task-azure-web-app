@@ -1,25 +1,70 @@
----
-languages:
-- php
-page_type: sample
-description: "This is a sample application that you can use to follow along with the Build a PHP and MySQL web app in Azure tutorial."
-products:
-- azure
-- azure-app-service
----
+# E school SAAS
 
-# Laravel sample for Azure App Service
+It is a Saas version of the main E school Product
 
-This is a sample application that you can use to follow along with the tutorial at 
-[Build a PHP and MySQL web app in Azure](https://docs.microsoft.com/azure/app-service/tutorial-php-mysql-app?pivots=platform-linux).
+[//]: # (## Screenshots)
 
-This sample application is taken from the official [Laravel sample task list application](https://github.com/laravel/quickstart-basic) and modified minimally to make it work with Azure App Service. For instructions on how to use Laravel, see the official repository.
+[//]: # (![App Screenshot]&#40;https://via.placeholder.com/468x300?text=App+Screenshot+Here&#41;)
 
-## License
+### Setup Instructions
 
-See [LICENSE](LICENSE).
+Clone the project
 
-## Contributing
+```bash
+  https://github.com/wrteam-sagar/eschool-saas.git
+```
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-  
+Go to the project directory
+
+```bash
+  cd eschool-saas
+```
+
+Install dependencies
+
+```bash
+  composer install
+```
+
+Copy .env File
+
+```bash
+  cp .env.example .env
+```
+
+Configure ENV Variables
+
+`DB_HOST`
+
+`DB_PORT`
+
+`DB_DATABASE`
+
+`DB_USERNAME`
+
+`DB_PASSWORD`
+
+Run Migrations
+
+```bash
+  php artisan migrate
+```
+
+Run Database seeder to create Permissions & Roles
+
+```bash
+  php artisan db:seed
+```
+
+Start the server
+
+```bash
+  php artisan serve
+```
+
+Default Credentials for Super Admin
+
+```bash
+  superadmin@gmail.com
+  superadmin
+```
